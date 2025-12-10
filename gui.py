@@ -46,7 +46,7 @@ class ScriptManagerGUI:
             row=0, column=0, sticky="w", padx=5, pady=2
         )
         self.node_path_var = tk.StringVar(
-            value="C:/Users/juuip/open/server3.js"  # 필요 시 수정
+            value="C:/Users/juuip/open/server.js"  # 필요 시 수정
         )
         self.node_path_entry = tk.Entry(
             node_frame, textvariable=self.node_path_var, width=50
@@ -95,7 +95,7 @@ class ScriptManagerGUI:
             row=0, column=0, sticky="w", padx=5, pady=2
         )
         self.py_path_var = tk.StringVar(
-            value="C:\\Users\\juuip\\open\\sound3.py"  # 파일명에 맞게 수정
+            value="C:\\Users\\juuip\\open\\sound.py"  # 파일명에 맞게 수정
         )
         self.py_path_entry = tk.Entry(
             py_frame, textvariable=self.py_path_var, width=50
