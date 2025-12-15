@@ -199,7 +199,6 @@ class AudioDetector:
                 voice = bool(self.Mic_tuning.is_voice())
 
                 if voice and not last_voice:
-                    t_detect_ms = time.time_ns() // 1_000_000
                     doa = self.Mic_tuning.direction
 
                     with self.config_lock:
@@ -234,6 +233,7 @@ class AudioDetector:
                         probs = torch.softmax(logits, dim=-1).cpu().numpy()
 
                     pairs = [(self.LABEL_NAMES[i], float(probs[i])) for i in range(len(self.LABEL_NAMES))]
+                    t_detect_ms = time.time_ns() // 1_000_000
 
                     # Dog/Bark 통합 (버그 수정)
                     dog_score = next((s for l, s in pairs if l == "Dog"), 0.0)
@@ -260,8 +260,8 @@ class AudioDetector:
                             output = {
                                 "type": "detection",
                                 # 전송시각/감지시각 둘 다 넣어줌
-                                "t_detect_ms": t_detect_ms,
-                                "t_send_ms": time.time_ns() // 1_000_000,
+                                "timestamp": t_detect_ms,
+                                # "t_send_ms": time.time_ns() // 1_000_000,
                                 "doa": doa,
                                 "tags": [{"label": top1_label, "score": round(top1_score, 2)}],
                             }
@@ -306,3 +306,4 @@ class AudioDetector:
                 self._stream.close()
         except Exception:
             pass
+
