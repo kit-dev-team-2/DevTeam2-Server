@@ -260,8 +260,8 @@ class AudioDetector:
                             output = {
                                 "type": "detection",
                                 # 전송시각/감지시각 둘 다 넣어줌
-                                "timestamp": t_detect_ms,
-                                # "t_send_ms": time.time_ns() // 1_000_000,
+                                # "t_detect_ms": t_detect_ms,
+                                "timestamp": time.time_ns() // 1_000_000,
                                 "doa": doa,
                                 "tags": [{"label": top1_label, "score": round(top1_score, 2)}],
                             }
@@ -306,4 +306,5 @@ class AudioDetector:
                 self._stream.close()
         except Exception:
             pass
+
 
