@@ -39,3 +39,9 @@ python gui.py
 - 각 파일 경로 설정 및 Node WS 서버 실행 버튼 클릭
 - WS 서버가 정상 실행된 후, PANNs 감지 시작 버튼 클릭
 
+## 3. 파일
+- audio_detector.py : 오디오 감지 및 분류
+- sound.py : main 실행 파일
+- web_socket_client : 웹소켓 클라이언트
+
+
