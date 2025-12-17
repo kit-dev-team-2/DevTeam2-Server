@@ -6,7 +6,7 @@ ReSpeaker USB Mic Array, PANNs 기반 분류 모델, Node WebSocket 서버, Tkin
 ## 1-1 디렉토리
 - embedded_audio_module
   - 마이크 임베디드 시스템을 활용한 소리 감지 및 분류
-  (https://www.seeedstudio.com/ReSpeaker-USB-Mic-Array-p-4247.html)
+  - (https://www.seeedstudio.com/ReSpeaker-USB-Mic-Array-p-4247.html)
 - pra_audio_module
   - 오픈소스(Pyroomacoustics)를 활용한 소리 감지 및 분류
   - (https://pyroomacoustics.readthedocs.io/en/pypi-release/index.html)
